@@ -15,7 +15,7 @@ interface MenuItem {
   templateUrl: './side-menu-options.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SideMenuOptions {
+export class SideMenuOptionsComponent {
   protected readonly menuItems: MenuItem[] = [
     {
       iconClass: 'fa-solid fa-border-all',

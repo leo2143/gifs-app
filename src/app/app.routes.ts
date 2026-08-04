@@ -3,16 +3,16 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'dashboard',
-    loadComponent: () => import('./gifs/pages/dashboard/dashboard').then(m => m.Dashboard),
+    loadComponent: () => import('./gifs/pages/dashboard/dashboard.component').then(m => m.DashboardComponent),
 
     children:[
         {
             path: 'trending',
-            loadComponent: () => import('./gifs/pages/trending/trending').then(m => m.Trending),
+            loadComponent: () => import('./gifs/pages/trending/trending.component').then(m => m.TrendingComponent),
           },
           {
             path: 'search',
-            loadComponent: () => import('./gifs/pages/search/search').then(m => m.Search),
+            loadComponent: () => import('./gifs/pages/search/search.component').then(m => m.SearchComponent),
           },
           
         {

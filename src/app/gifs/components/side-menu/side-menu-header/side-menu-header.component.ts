@@ -7,7 +7,7 @@ import { environment } from '../../../../../environments/environment.development
   templateUrl: './side-menu-header.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SideMenuHeader {
+export class SideMenuHeaderComponent {
 
  envs = environment;
 
