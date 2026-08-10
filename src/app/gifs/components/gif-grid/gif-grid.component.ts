@@ -8,5 +8,5 @@ import { Gif } from '../../../interfaces/gif.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GifGridComponent {
-  gifs = input.required<Gif[]>();
+  gifs = input<Gif[]>([]);
 }

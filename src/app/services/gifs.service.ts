@@ -14,6 +14,8 @@ export class GifsService {
 
   trendingGifs = signal<Gif[]>([]);
   trendingGifsLoading = signal<boolean>(false);
+  gifs = signal<Gif[]>([]);
+  gifsLoading = signal<boolean>(false);
   constructor() {
     this.loadTrendingGifs();
   }
@@ -31,5 +33,18 @@ export class GifsService {
         this.trendingGifs.set(gifs);
         this.trendingGifsLoading.set(false);
       });
+  }
+  searchGifs(query: string) {
+    return this.http.get<GiphyResponse>(`${this.apiUrl}/gifs/search`,{
+      params: {
+        api_key: environment.GiphyApiKey,
+        q: query,
+        limit: 25,
+        offset: 0,
+        rating: 'g',
+        lang: 'en',
+        bundle: 'messaging_non_clips',
+      },
+    })
   }
 }
