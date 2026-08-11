@@ -8,7 +8,5 @@ import { environment } from '../../../../../environments/environment.development
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuHeaderComponent {
-
- envs = environment;
-
- }
+  envs = environment;
+}

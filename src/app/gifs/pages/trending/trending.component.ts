@@ -8,6 +8,6 @@ import { GifsService } from '../../../services/gifs.service';
   templateUrl: './trending.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TrendingComponent {
+export default class TrendingComponent {
   trendingGifs = inject(GifsService).trendingGifs;
 }

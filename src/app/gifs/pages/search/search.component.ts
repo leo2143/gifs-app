@@ -10,16 +10,13 @@ import { GiphyMapper } from '../../../interfaces/giphy.mapper';
   templateUrl: './search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchComponent {
-  
+export default class SearchComponent {
   gifsService = inject(GifsService);
   gifs = signal<Gif[]>([]);
 
   onSearch(query: string) {
-    this.gifsService.searchGifs(query).subscribe(resp =>{
-      this.gifs.set(GiphyMapper.mapGifsToArray(resp.data));
-    })
-
+    this.gifsService.searchGifs(query).subscribe((resp) => {
+      this.gifs.set(resp);
+    });
   }
-  
 }
